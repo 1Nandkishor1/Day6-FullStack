@@ -15,7 +15,7 @@ const App = () => {
     e.preventDefault();
     if(!update){
     let { title, description } = e.target.elements;// 1.target=>Whole Form  2.elements=>Each Element of form(html) 3.value=>Value of Each Html compnenet
-    axios.post("http://localhost:3000/notes", {
+    axios.post("https://day6-fullstack.onrender.com/", {
       title: title.value,
       description: description.value
     })
@@ -26,7 +26,7 @@ const App = () => {
       })
     }
     else{
-      axios.patch("http://localhost:3000/notes/"+id,formdata)
+      axios.patch("https://day6-fullstack.onrender.com/"+id,formdata)
       .then((res)=>{
         console.log(res.data);
         setupdate(false);
@@ -41,7 +41,7 @@ const App = () => {
   }
 
   function deleteHandler(id) {
-    axios.delete("http://localhost:3000/notes/" + id)
+    axios.delete("https://day6-fullstack.onrender.com/" + id)
       .then((res) => {
         console.log(res.data);
         fetchNotes();
@@ -73,7 +73,7 @@ const App = () => {
   }
 
   function fetchNotes() {
-    axios.get("http://localhost:3000/notes") //axios=>A library and .get is method of that (1.it sends HTTP request to .get route of server,2.We can also Use .fetch)
+    axios.get("https://day6-fullstack.onrender.com/") //axios=>A library and .get is method of that (1.it sends HTTP request to .get route of server,2.We can also Use .fetch)
       .then((res) => {
         console.log(res.data); //res.data=>It Caontains the main object sent by backend
         return setnote(res.data.note)
