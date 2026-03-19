@@ -1,0 +1,30 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+#root{
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+
+}
+
+.notes{
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.note{
+  width: 20rem;
+  height: 5rem;
+  background-color: #817f7f;
+  color: rgb(249, 251, 253);
+}
